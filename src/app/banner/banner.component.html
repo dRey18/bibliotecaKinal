@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let img of imagenes">
+            <img [src]="img" alt="imagen de banner">
+        </div>
+    </div>
+</div>

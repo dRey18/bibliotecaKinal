@@ -1,0 +1,31 @@
+<input type="text" [(ngModel)]="title">
+{{ title }}
+
+<div *ngIf="title === 'diego'">
+    este es diego
+</div>
+
+<div *ngIf="title === 'jacobo'">
+    este es jacobo
+</div>
+
+<div *ngIf="title === 'Armando'">
+    este es Armando
+</div>
+
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'diego'">diego</p>
+    <p *ngSwitchCase="'jacobo'"> Jacobo</p>
+    <p *ngSwitchCase="'Armando'">Armando</p>
+    <p *ngSwitchDefault>no hay match</p>
+</div>
+
+<button (click)="addItem()">Add items</button>
+
+<ul>
+    <li *ngIf="items.length === 0">list vacia</li>
+    <li *ngFor="let name of items; index as i">
+        {{ name }} {{ i }}
+        <button (click)="deleteItem(i)">delete</button>
+    </li>
+</ul>

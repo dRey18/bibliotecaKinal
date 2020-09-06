@@ -6,31 +6,41 @@ import {LibrosKComponent} from './libros-k/libros-k.component';
 import {AboutUsComponent} from './about-us/about-us.component';
 import {DemoComponent} from './demo/demo.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
-
-import { from } from 'rxjs';
-import { abort } from 'process';
+import {LibroDetailComponent } from './libro-detail/libro-detail.component';
+import {LayoutComponent} from './layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'libros',
-    component: LibrosKComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'libros',
+        component: LibrosKComponent
+      },
+      {
+        path: 'libros/:id',
+        component: LibroDetailComponent
+      },
+      {
+        path: 'about',
+        component: AboutUsComponent
+      },
+
+    ]
   },
   {
     path: 'demo',
     component: DemoComponent
-  },
-  {
-    path: 'about',
-    component: AboutUsComponent
   },
   {
     path: '**',

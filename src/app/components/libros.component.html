@@ -2,5 +2,5 @@
     <h3>{{libro.autor | uppercase}}</h3> 
     <h3>{{ libro.titulo}}</h3>
     <img [src]="libro.image" alt="">
-    <p>{{ libro.descripcion | slice:0:5}}</p>
     <button (click)="addLibro()">Agregar a la libreria</button>
+    <a [routerLink]="['/libros', libro.id]">Ver detalle</a>

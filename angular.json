@@ -3,6 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+<<<<<<< HEAD
     "biblioteca-kinal": {
       "projectType": "application",
       "schematics": {
@@ -13,10 +14,17 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+=======
+    "pk2-angular": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+>>>>>>> 72df6c0... profile
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
             "outputPath": "dist/biblioteca-kinal",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,22 +37,42 @@
             ],
             "styles": [
               "src/styles.scss"
+=======
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/sass/paper-kit.scss",
+              "src/assets/css/demo.css",
+              "src/assets/css/nucleo-icons.css"
+>>>>>>> 72df6c0... profile
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+<<<<<<< HEAD
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+=======
+>>>>>>> 72df6c0... profile
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
+<<<<<<< HEAD
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -58,6 +86,16 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
+=======
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+>>>>>>> 72df6c0... profile
                 }
               ]
             }
@@ -66,24 +104,37 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "biblioteca-kinal:build"
           },
           "configurations": {
             "production": {
               "browserTarget": "biblioteca-kinal:build:production"
+=======
+            "browserTarget": "pk2-angular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pk2-angular:build:production"
+>>>>>>> 72df6c0... profile
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "biblioteca-kinal:build"
+=======
+            "browserTarget": "pk2-angular:build"
+>>>>>>> 72df6c0... profile
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+<<<<<<< HEAD
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
@@ -95,12 +146,29 @@
               "src/styles.scss"
             ],
             "scripts": []
+=======
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "scripts": [],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/sass/paper-kit.scss",
+              "src/assets/css/demo.css",
+              "src/assets/css/nucleo-icons.css"
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ]
+>>>>>>> 72df6c0... profile
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
+<<<<<<< HEAD
               "tsconfig.app.json",
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
@@ -126,3 +194,51 @@
     }},
   "defaultProject": "biblioteca-kinal"
 }
+=======
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    },
+    "pk2-angular-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "pk2-angular:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "pk2-angular",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}
+>>>>>>> 72df6c0... profile

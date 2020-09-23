@@ -1,0 +1,7 @@
+<div class="libro-grid">
+    <app-book
+     *ngFor="let libros of books"
+      (libroClicked)="clickLibro($event)"
+      [libro]="libros">
+    </app-book>
+</div>
